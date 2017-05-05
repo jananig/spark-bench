@@ -1,9 +1,10 @@
 # global settings
 
-master="pts00450-vm16"
+master="127.0.0.1"
+#master="pts00450-vm16"
 #A list of machines where the spark cluster is running
-MC_LIST="pts00450-vm22 pts00450-vm23"
-
+#MC_LIST="pts00450-vm22 pts00450-vm23"
+MC_LIST=""
 
 [ -z "$HADOOP_HOME" ] &&     export HADOOP_HOME=/YOUR/HADOOP
 # base dir for DataSet
@@ -11,13 +12,15 @@ HDFS_URL="hdfs://${master}:9000"
 SPARK_HADOOP_FS_LOCAL_BLOCK_SIZE=536870912
 
 # DATA_HDFS="hdfs://${master}:9000/SparkBench", "file:///home/`whoami`/SparkBench"
-DATA_HDFS="hdfs://${master}:9000/SparkBench"
+#DATA_HDFS="hdfs://${master}:9000/SparkBench"
+DATA_HDFS="file:///home/`whoami`/SparkBench"
 
 #Local dataset optional
 DATASET_DIR=/home/`whoami`/SparkBench/dataset
 
 SPARK_VERSION=2.0.1  #1.5.1
-[ -z "$SPARK_HOME" ] &&     export SPARK_HOME=/YOUR/SPARK
+[ -z "$SPARK_HOME" ] &&     export SPARK_HOME="/home/janani/COURSES/CMSC724-Spring17/Assignment2/spark-2.0.1-bin-hadoop2.7"
+
 
 #SPARK_MASTER=local
 #SPARK_MASTER=local[K]
@@ -25,7 +28,8 @@ SPARK_VERSION=2.0.1  #1.5.1
 #SPARK_MASTER=spark://HOST:PORT
 ##SPARK_MASTER=mesos://HOST:PORT
 ##SPARK_MASTER=yarn-client
-SPARK_MASTER=yarn
+#SPARK_MASTER=yarn
+SPARK_MASTER=local[*]
 MASTER=yarn
 YARN_DEPLOY_MODE=client # or cluster, this will go to spark submit as --deploy-mode
 SPARK_RPC_ASKTIMEOUT=500

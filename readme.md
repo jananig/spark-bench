@@ -132,7 +132,8 @@ Usecase 4. It allows in-depth study of performance implication of Apache Spark s
 	launches Apache Spark applications can run simultaneously.
 4. View the result.
 
-	Goto `<SPARK_BENCH_HOME>/report` to check for the final report.
+	Go to <SPARK_BENCH_HOME>/num for report.
+	
 
 ---
 ### Advanced Configurations ###

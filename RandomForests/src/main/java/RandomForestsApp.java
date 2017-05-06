@@ -113,9 +113,9 @@ public class RandomForestsApp {
         System.out.println("Learned " + mode + " forest model:\n" + model.toDebugString());
 
         // Save and load model
-        model.save(jsc.sc(), "target/tmp/myRandomForest" + mode + "Model"); 
-        RandomForestModel sameModel = RandomForestModel.load(jsc.sc(),
-          "target/tmp/myRandomForest" + mode + "Model");
+       // model.save(jsc.sc(), "target/tmp/myRandomForest" + mode + "Model"); 
+        //RandomForestModel sameModel = RandomForestModel.load(jsc.sc(),
+        //  "target/tmp/myRandomForest" + mode + "Model");
         jsc.stop();
 
     }

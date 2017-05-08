@@ -108,6 +108,9 @@ function set_gendata_opt() {
 #  if [ ! -z "$SPARK_STORAGE_MEMORYFRACTION" ]; then
 #    SPARK_OPT="${SPARK_OPT} --conf spark.storage.memoryFraction=${SPARK_STORAGE_MEMORYFRACTION}"
 #  fi
+  if [ ! -z "$SPARK_EVENTLOG_ENABLED" ]; then
+    SPARK_OPT="${SPARK_OPT} --conf spark.eventLog.enabled=${SPARK_EVENTLOG_ENABLED}"
+  fi
   if [ ! -z "$SPARK_EXECUTOR_MEMORY" ]; then
     SPARK_OPT="${SPARK_OPT} --conf spark.executor.memory=${SPARK_EXECUTOR_MEMORY}"
   fi

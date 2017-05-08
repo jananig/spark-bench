@@ -42,7 +42,7 @@ SPARK_RPC_ASKTIMEOUT=500
 # - SPARK_RDD_COMPRESS, --conf spark.rdd.compress
 # - SPARK_IO_COMPRESSION_CODEC, --conf spark.io.compression.codec
 # - SPARK_DEFAULT_PARALLELISM, --conf spark.default.parallelism
-SPARK_SERIALIZER=org.apache.spark.serializer.KryoSerializer
+#SPARK_SERIALIZER=org.apache.spark.serializer.KryoSerializer
 SPARK_RDD_COMPRESS=false
 SPARK_IO_COMPRESSION_CODEC=lzf
 
@@ -52,6 +52,10 @@ SPARK_IO_COMPRESSION_CODEC=lzf
 #SPARK_STORAGE_MEMORYFRACTION=0.5
 SPARK_EXECUTOR_MEMORY=1g
 #export MEM_FRACTION_GLOBAL=0.005
+
+# Spark options to set UI and history server
+# - SPARK_EVENTLOG_ENABLED, --conf spark.eventLog.enabled
+SPARK_EVENTLOG_ENABLED=true
 
 # Spark options in YARN client mode
 # - SPARK_DRIVER_MEMORY, --driver-memory
@@ -72,3 +76,4 @@ STORAGE_LEVEL=MEMORY_AND_DISK
 NUM_OF_PARTITIONS=2
 # for running
 NUM_TRIALS=1
+
